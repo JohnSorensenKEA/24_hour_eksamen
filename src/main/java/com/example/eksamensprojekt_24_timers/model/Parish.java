@@ -22,4 +22,15 @@ public class Parish { //Sogn
     private long infectionPressure; //Smittetryk
 
     private LocalDate shutDownStartDate; //Start på nedlukning
+
+    public Parish() {
+    }
+
+    public Parish(int code, String name, Commune commune, long infectionPressure, LocalDate shutDownStartDate) {
+        this.code = code;
+        this.name = name;
+        this.commune = commune;
+        this.infectionPressure = infectionPressure;
+        this.shutDownStartDate = shutDownStartDate;
+    }
 }

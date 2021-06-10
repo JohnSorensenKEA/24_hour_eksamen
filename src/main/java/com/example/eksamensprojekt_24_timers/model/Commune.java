@@ -16,4 +16,12 @@ public class Commune {
 
     @OneToMany(mappedBy = "commune")
     private List<Parish> parishes;
+
+    public Commune() {
+    }
+
+    public Commune(String name, String code) {
+        this.name = name;
+        this.code = code;
+    }
 }
