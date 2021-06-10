@@ -39,6 +39,8 @@ const newShutDownUrl = "/api/newShutDown";
 const endShutDownUrl = "/api/removeShutDown";
 const deleteParishUrl = "/api/deleteParish";
 
+const getAllCommunesUrl = "/api/allCommunes";
+
 //-----------------------------------------------------------------------------------
 let parishes = [];
 
@@ -93,4 +95,10 @@ function deleteParish(parish){
     return fetch(deleteParishUrl, deleteRequestOptions)
         .then(response => response.status)
         .then(status => {return status});
+}
+
+function getCommunes(){
+    return fetch(getAllCommunesUrl, getRequestOptions)
+        .then(response => response.json())
+        .then(data => {return data});
 }

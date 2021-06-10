@@ -7,6 +7,9 @@ const delBtn = document.querySelector(".del-btn");
 const startBtn = document.querySelector(".start-btn");
 const remBtn = document.querySelector(".rem-btn");
 
+const comSaveBtn = document.querySelector(".com-save-btn");
+const comRemBtn = document.querySelector(".com-rem-btn");
+
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
@@ -16,6 +19,7 @@ function reset(){
     build();
     resetForm();
     hideBox();
+    setComSel();
 }
 
 function classSearch(element, term){
@@ -56,8 +60,12 @@ delBtn.addEventListener("click", deleteSelected);
 startBtn.addEventListener("click", addShutDownSelected);
 remBtn.addEventListener("click", removeShutDownSelected);
 
+comSaveBtn.addEventListener("click", saveCom);
+comRemBtn.addEventListener("click", remCom);
+
 function init(){
     build();
+    setComSel();
 }
 
 init();

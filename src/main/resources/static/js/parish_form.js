@@ -8,13 +8,28 @@ const infInp = document.querySelector(".inf-inp");
 
 const dateInp = document.querySelector(".date-inp");
 
+const comSel = document.querySelector(".com-sel");
+
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
+
+function setComSel() {
+    getCommunes()
+        .then(data => {
+            data.forEach(com => {
+                const opt = document.createElement("option");
+                opt.value = com.id;
+                opt.innerHTML = com.name;
+                comSel.appendChild(opt);
+            })
+        })
+}
 
 function resetForm(){
     formInps.forEach(i => {i.value = ""; i.disabled = true});
     formBtns.forEach(b => b.disabled = true);
+    comSel.disabled = true;
 }
 
 function setForm(id){
@@ -43,6 +58,14 @@ function setForm(id){
     } else {
         remBtn.disabled = false;
     }
+
+    //Commune
+    if (parish.commune === null){
+        comSel.disabled = false;
+        comSaveBtn.disabled = false;
+    } else {
+        comRemBtn.disabled = false;
+    }
 }
 
 function updateSelected(){
@@ -56,6 +79,7 @@ function updateSelected(){
 
 function deleteSelected(){
     const parish = parishes[selectedCon];
+    console.log(selectedCon, parish);
     deleteParish(parish)
         .then(status => {reset()});
 }
@@ -71,4 +95,12 @@ function addShutDownSelected(){
     parish.shutDownEndDate = dateInp.value;
     newShutDown(parish)
         .then(status => {reset()});
+}
+
+function saveCom(){
+
+}
+
+function remCom(){
+
 }

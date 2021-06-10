@@ -14,6 +14,7 @@ function deselect(el){
 
 function select(el){
     resetForm();
+    selectedCon = el.getAttribute("id");
     parishCons.forEach(con => con.className = "clickable par-con");
     el.className = "clickable par-con selected";
     setForm(el.getAttribute("id"));
