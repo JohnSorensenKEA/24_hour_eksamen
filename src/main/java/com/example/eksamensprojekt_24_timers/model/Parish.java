@@ -19,7 +19,7 @@ public class Parish { //Sogn
     @JoinColumn(name = "commune_id")
     private Commune commune; //Kommune
 
-    private long infectionPressure; //Smittetryk
+    private float infectionPressure; //Smittetryk
 
     private LocalDate shutDownStartDate; //Start på nedlukning
 
