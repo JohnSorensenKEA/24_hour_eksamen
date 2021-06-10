@@ -15,4 +15,6 @@ public interface ParishService {
     void deleteParish(Parish parish);
 
     void save(Parish parish);
+
+    List<Parish> getParishesByCommune(Integer id);
 }

@@ -37,4 +37,9 @@ public class ParishServiceImpl implements ParishService {
     public void save(Parish parish) {
         parishRepository.save(parish);
     }
+
+    @Override
+    public List<Parish> getParishesByCommune(Integer id) {
+        return parishRepository.findAllByCommuneMatches(id);
+    }
 }

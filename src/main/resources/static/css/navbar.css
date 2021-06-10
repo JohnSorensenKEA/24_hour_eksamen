@@ -1,6 +1,14 @@
-@import url("https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css");
-
 .nav-bar{
     background-color: #343333;
-    width: 100%;
+    padding: 20px;
+    margin: 0;
+    display: inline-block;
+}
+.nav-item{
+    color: white;
+    text-decoration: none;
+}
+.nav-divider{
+    color: #dad6d6;
+    margin: 0 5px 0 5px;
 }

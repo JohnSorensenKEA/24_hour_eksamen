@@ -1,7 +1,5 @@
 package com.example.eksamensprojekt_24_timers.model;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 import javax.persistence.*;
 import java.time.LocalDate;
 

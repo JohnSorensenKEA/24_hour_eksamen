@@ -38,4 +38,9 @@ public class ParishRestController {
         Parish changedParish = parishService.updateParish(parish);
         return new ResponseEntity<>(changedParish, HttpStatus.OK);
     }
+
+    @GetMapping("/communeParishes/{id}")
+    public List<Parish> communeParishes(@PathVariable Integer id){
+        return parishService.getParishesByCommune(id);
+    }
 }
