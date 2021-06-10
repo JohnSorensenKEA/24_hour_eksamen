@@ -23,15 +23,18 @@ public class Parish { //Sogn
 
     private LocalDate shutDownStartDate; //Start på nedlukning
 
+    private LocalDate shutDownEndDate;
+
     public Parish() {
     }
 
-    public Parish(int code, String name, Commune commune, float infectionPressure, LocalDate shutDownStartDate) {
+    public Parish(int code, String name, Commune commune, float infectionPressure, LocalDate shutDownStartDate, LocalDate shutDownEndDate) {
         this.code = code;
         this.name = name;
         this.commune = commune;
         this.infectionPressure = infectionPressure;
         this.shutDownStartDate = shutDownStartDate;
+        this.shutDownEndDate = shutDownEndDate;
     }
 
     public Integer getId() {
@@ -80,5 +83,13 @@ public class Parish { //Sogn
 
     public void setShutDownStartDate(LocalDate shutDownStartDate) {
         this.shutDownStartDate = shutDownStartDate;
+    }
+
+    public LocalDate getShutDownEndDate() {
+        return shutDownEndDate;
+    }
+
+    public void setShutDownEndDate(LocalDate shutDownEndDate) {
+        this.shutDownEndDate = shutDownEndDate;
     }
 }

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Sogne</title>
     <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/parish.css">
 </head>
 <body>
 <div class="nav-bar">
@@ -12,6 +13,35 @@
     <a class="nav-item" href="/kommuner">Kommuner</a>
 </div>
 <h1>Sogne</h1>
+
+<input class="new-btn" type="button" value="Opret sogn">
+<br><br><br>
+<div class="all-con">
+    <div class="par-list"></div>
+    <div class="form-con">
+        <div class="base-con">
+            <label>Id</label><br>
+            <input type="text" disabled><br><br>
+            <label>Navn</label><br>
+            <input type="text"><br><br>
+            <label>Kode</label><br>
+            <input type="text"><br><br>
+            <label>Smittetryk</label><br>
+            <input type="text"><br><br>
+            <br>
+            <input type="button" value="Opdater">
+        </div>
+        <div class="shutdown-con">
+            <label>Nedluknings slutdato</label><br>
+            <input type="date"><br><br>
+            <input type="button" value="Start nedlukning">
+            <input type="button" value="Fjern nedlukning">
+        </div>
+        <div class="other-con">
+            <input type="button" value="Slet sogn">
+        </div>
+    </div>
+</div>
 
 </body>
 </html>

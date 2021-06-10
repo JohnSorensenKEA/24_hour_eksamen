@@ -1,5 +1,6 @@
 const communeCon = document.querySelector(".com-con");
 
+//-----------------------------------------------------------------------------------
 const getRequestOptions = {
     headers: {
         "content-type": 'application/json'
@@ -11,7 +12,9 @@ const getRequestOptions = {
 const getAllCommunesUrl = "/api/allCommunes";
 const getParishesByCommuneUrl = "/api/communeParishes/";
 
+//-----------------------------------------------------------------------------------
 function setInfectionNumber(commune, element){
+
     fetch(getParishesByCommuneUrl + commune.id, getRequestOptions)
         .then(response => response.json())
         .then(data => {
@@ -26,8 +29,7 @@ function setInfectionNumber(commune, element){
                         value += parish.infectionPressure;
                     }
                 });
-                let avg = value/count;
-
+                const avg = value/count;
                 element.innerHTML = "Smittetryk: " + avg;
             }
         })

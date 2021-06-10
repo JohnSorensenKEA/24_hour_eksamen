@@ -5,6 +5,7 @@ import com.example.eksamensprojekt_24_timers.repository.ParishRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -15,7 +16,21 @@ public class ParishServiceImpl implements ParishService {
 
     @Override
     public List<Parish> getAllParishes() {
-        return parishRepository.findAll();
+        List<Parish> parishes = parishRepository.findAll();
+
+        for (Parish p : parishes){
+            LocalDate shutDownEndDate = p.getShutDownEndDate();
+            if (shutDownEndDate != null){
+                if (shutDownEndDate.isBefore(LocalDate.now())){
+                    p.setShutDownEndDate(null);
+                    p.setShutDownStartDate(null);
+
+                    parishRepository.save(p);
+                }
+            }
+        }
+
+        return parishes;
     }
 
     @Override

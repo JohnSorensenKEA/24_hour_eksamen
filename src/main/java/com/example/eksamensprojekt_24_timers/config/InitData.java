@@ -45,20 +45,20 @@ public class InitData implements CommandLineRunner {
     }
 
     public void parishes(){
-        Parish parish1 = new Parish(215, "Sogn123", communeService.getCommuneByCode("101").get(), 1.1f, LocalDate.of(2021, 6, 10));
-        Parish parish2 = new Parish(356, "Sogn123", communeService.getCommuneByCode("101").get(), 1.2f, LocalDate.of(2021, 6, 10));
-        Parish parish3 = new Parish(865, "Sogn123", communeService.getCommuneByCode("101").get(), 0.8f, null);
-        Parish parish4 = new Parish(851, "Sogn123", communeService.getCommuneByCode("151").get(), 1.3f, LocalDate.of(2021, 6, 10));
-        Parish parish5 = new Parish(153, "Sogn123", communeService.getCommuneByCode("159").get(), 0.6f, null);
-        Parish parish6 = new Parish(684, "Sogn123", communeService.getCommuneByCode("410").get(), 1.1f, LocalDate.of(2021, 6, 10));
-        Parish parish7 = new Parish(965, "Sogn123", communeService.getCommuneByCode("350").get(), 1.1f, LocalDate.of(2021, 6, 10));
-        Parish parish8 = new Parish(156, "Sogn123", communeService.getCommuneByCode("360").get(), 1.2f, LocalDate.of(2021, 6, 10));
-        Parish parish9 = new Parish(469, "Sogn123", communeService.getCommuneByCode("461").get(), 1.0f, LocalDate.of(2021, 6, 10));
-        Parish parish10 = new Parish(365, "Sogn123", communeService.getCommuneByCode("461").get(), 0.9f, null);
-        Parish parish11 = new Parish(274, "Sogn123", communeService.getCommuneByCode("461").get(), 1.1f, LocalDate.of(2021, 6, 10));
-        Parish parish12 = new Parish(714, "Sogn123", communeService.getCommuneByCode("461").get(), 1.2f, LocalDate.of(2021, 6, 10));
-        Parish parish13 = new Parish(312, "Sogn123", communeService.getCommuneByCode("461").get(), 0.7f, null);
-        Parish parish14 = new Parish(587, "Sogn123", communeService.getCommuneByCode("461").get(), 1.5f, LocalDate.of(2021, 6, 10));
+        Parish parish1 = new Parish(215, "Sogn123", communeService.getCommuneByCode("101").get(), 1.1f, LocalDate.of(2021, 6, 10), null);
+        Parish parish2 = new Parish(356, "Sogn123", communeService.getCommuneByCode("101").get(), 1.2f, LocalDate.of(2021, 6, 10), null);
+        Parish parish3 = new Parish(865, "Sogn123", communeService.getCommuneByCode("101").get(), 0.8f, null, null);
+        Parish parish4 = new Parish(851, "Sogn123", communeService.getCommuneByCode("151").get(), 1.3f, LocalDate.of(2021, 6, 10), null);
+        Parish parish5 = new Parish(153, "Sogn123", communeService.getCommuneByCode("159").get(), 0.6f, null, null);
+        Parish parish6 = new Parish(684, "Sogn123", communeService.getCommuneByCode("410").get(), 1.1f, LocalDate.of(2021, 6, 10), null);
+        Parish parish7 = new Parish(965, "Sogn123", communeService.getCommuneByCode("350").get(), 1.1f, LocalDate.of(2021, 6, 10), null);
+        Parish parish8 = new Parish(156, "Sogn123", communeService.getCommuneByCode("360").get(), 1.2f, LocalDate.of(2021, 6, 10), null);
+        Parish parish9 = new Parish(469, "Sogn123", communeService.getCommuneByCode("461").get(), 1.0f, LocalDate.of(2021, 6, 10), null);
+        Parish parish10 = new Parish(365, "Sogn123", communeService.getCommuneByCode("461").get(), 0.9f, null, null);
+        Parish parish11 = new Parish(274, "Sogn123", communeService.getCommuneByCode("461").get(), 1.1f, LocalDate.of(2021, 6, 10), null);
+        Parish parish12 = new Parish(714, "Sogn123", communeService.getCommuneByCode("461").get(), 1.2f, LocalDate.of(2021, 6, 10), null);
+        Parish parish13 = new Parish(312, "Sogn123", communeService.getCommuneByCode("461").get(), 0.7f, null, null);
+        Parish parish14 = new Parish(587, "Sogn123", communeService.getCommuneByCode("461").get(), 1.5f, LocalDate.of(2021, 6, 10), null);
 
         parishService.save(parish1);
         parishService.save(parish2);
