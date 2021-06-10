@@ -26,7 +26,7 @@ public class Parish { //Sogn
     public Parish() {
     }
 
-    public Parish(int code, String name, Commune commune, long infectionPressure, LocalDate shutDownStartDate) {
+    public Parish(int code, String name, Commune commune, float infectionPressure, LocalDate shutDownStartDate) {
         this.code = code;
         this.name = name;
         this.commune = commune;
