@@ -1,11 +1,27 @@
 const parList = document.querySelector(".par-list");
 
 //-----------------------------------------------------------------------------------
-
+let parishCons = [];
+let selectedCon = -1;
 
 //-----------------------------------------------------------------------------------
 
+function deselect(el){
+    el.className = "clickable par-con";
+    selectedCon = -1;
+    resetForm();
+}
+
+function select(el){
+    resetForm();
+    parishCons.forEach(con => con.className = "clickable par-con");
+    el.className = "clickable par-con selected";
+    setForm(el.getAttribute("id"));
+}
+
 function clear(){
+    parishCons = [];
+    selectedCon = -1;
     parList.innerHTML = "";
 }
 
@@ -13,7 +29,7 @@ function setParishes(parishData){
     for(let i = 0; i < parishData.length; i++){
         const con = document.createElement("div");
         con.id = i;
-        con.className = "clickable par-con"
+        con.className = "clickable par-con";
 
         const navn = document.createElement("p");
         navn.innerHTML = parishData[i].name + " - " + parishData[i].code;
@@ -39,6 +55,7 @@ function setParishes(parishData){
         }
         con.appendChild(checkBox);
 
+        parishCons.push(con);
         parList.appendChild(con);
     }
 }

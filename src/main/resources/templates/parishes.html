@@ -12,34 +12,42 @@
     <a class="nav-item" href="/sogne">Sogne</a><span class="nav-divider">  |  </span>
     <a class="nav-item" href="/kommuner">Kommuner</a>
 </div>
+
 <h1>Sogne</h1>
 
 <input class="new-btn" type="button" value="Opret sogn">
 <br><br><br>
+
 <div class="all-con">
     <div class="par-list"></div>
     <div class="form-con">
+
         <div class="base-con">
             <label>Id</label><br>
-            <input type="text" disabled><br><br>
+            <input class="form-inp id-inp" type="text" disabled><br><br>
             <label>Navn</label><br>
-            <input type="text"><br><br>
+            <input class="form-inp name-inp" type="text" disabled><br><br>
             <label>Kode</label><br>
-            <input type="text"><br><br>
+            <input class="form-inp code-inp" type="text" disabled><br><br>
             <label>Smittetryk</label><br>
-            <input type="text"><br><br>
+            <input class="form-inp inf-inp" type="text" disabled><br><br>
             <br>
-            <input type="button" value="Opdater">
-            <input type="button" value="Slet sogn">
+            <input class="form-btn upd-btn" type="button" value="Opdater" disabled>
+            <input class="form-btn del-btn" type="button" value="Slet sogn" disabled>
         </div>
+
         <div class="shutdown-con">
             <label>Nedluknings slutdato</label><br>
-            <input type="date"><br><br>
-            <input type="button" value="Start nedlukning">
-            <input type="button" value="Fjern nedlukning">
+            <input class="form-inp date-inp" type="date" disabled><br><br>
+            <input class="form-btn start-btn" type="button" value="Start nedlukning" disabled>
+            <input class="form-btn rem-btn" type="button" value="Fjern nedlukning" disabled>
         </div>
-        <div class="commune-con">
 
+        <div class="commune-con">
+            <label>Kommune</label><br>
+            <select></select><br><br>
+            <input type="button" value="Gem">
+            <input type="button" value="Fjern">
         </div>
     </div>
 </div>

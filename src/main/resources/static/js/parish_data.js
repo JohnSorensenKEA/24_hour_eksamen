@@ -47,7 +47,7 @@ let parishes = [];
 function getParishes(){
     return fetch(getAllParishesUrl, getRequestOptions)
         .then(response => response.json())
-        .then(data => {parishes = data;return data});
+        .then(data => {parishes = data; return data});
 }
 
 function createParish(parish){
