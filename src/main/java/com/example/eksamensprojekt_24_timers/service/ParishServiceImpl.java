@@ -19,6 +19,7 @@ public class ParishServiceImpl implements ParishService {
     public List<Parish> getAllParishes() {
         List<Parish> parishes = parishRepository.findAll();
 
+        //Checks for expired shutdowns
         for (Parish p : parishes){
             LocalDate shutDownEndDate = p.getShutDownEndDate();
             if (shutDownEndDate != null){
