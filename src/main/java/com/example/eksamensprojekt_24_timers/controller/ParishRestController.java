@@ -43,4 +43,14 @@ public class ParishRestController {
     public List<Parish> communeParishes(@PathVariable Integer id){
         return parishService.getParishesByCommune(id);
     }
+
+    @PutMapping(value = "/removeShutDown", consumes = "application/json")
+    public ResponseEntity<Parish> removeShutDown(@RequestBody Parish parish){
+        return new ResponseEntity<>(parishService.removeShutDown(parish), HttpStatus.OK);
+    }
+
+    @PutMapping(value = "/newShutDown", consumes = "application/json")
+    public ResponseEntity<Parish> newShutDown(@RequestBody Parish parish){
+        return new ResponseEntity<>(parishService.newShutDown(parish), HttpStatus.OK);
+    }
 }

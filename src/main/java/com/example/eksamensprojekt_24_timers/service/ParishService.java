@@ -17,4 +17,8 @@ public interface ParishService {
     void save(Parish parish);
 
     List<Parish> getParishesByCommune(Integer id);
+
+    Parish removeShutDown(Parish parish);
+
+    Parish newShutDown(Parish parish);
 }

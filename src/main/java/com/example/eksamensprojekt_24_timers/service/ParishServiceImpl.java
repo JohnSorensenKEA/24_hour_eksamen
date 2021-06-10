@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ParishServiceImpl implements ParishService {
@@ -56,5 +57,39 @@ public class ParishServiceImpl implements ParishService {
     @Override
     public List<Parish> getParishesByCommune(Integer id) {
         return parishRepository.findAllByCommuneMatches(id);
+    }
+
+    @Override
+    public Parish removeShutDown(Parish parish) {
+        Optional<Parish> optParish = parishRepository.findById(parish.getId());
+
+        if (optParish.isPresent()){
+            Parish realParish = optParish.get();
+            realParish.setShutDownEndDate(null);
+            realParish.setShutDownStartDate(null);
+            parishRepository.save(realParish);
+            return realParish;
+        }
+
+        return parish;
+    }
+
+    @Override
+    public Parish newShutDown(Parish parish) {
+        Optional<Parish> optParish = parishRepository.findById(parish.getId());
+
+        if (optParish.isPresent() && parish.getShutDownEndDate() != null){
+            Parish realParish = optParish.get();
+            realParish.setShutDownEndDate(parish.getShutDownEndDate());
+            realParish.setShutDownStartDate(LocalDate.now());
+            parishRepository.save(realParish);
+            return realParish;
+        } else if (optParish.isPresent()) {
+            Parish realParish = optParish.get();
+            realParish.setShutDownStartDate(LocalDate.now());
+            parishRepository.save(realParish);
+            return realParish;
+        }
+        return parish;
     }
 }

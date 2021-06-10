@@ -30,6 +30,7 @@
             <input type="text"><br><br>
             <br>
             <input type="button" value="Opdater">
+            <input type="button" value="Slet sogn">
         </div>
         <div class="shutdown-con">
             <label>Nedluknings slutdato</label><br>
@@ -37,11 +38,27 @@
             <input type="button" value="Start nedlukning">
             <input type="button" value="Fjern nedlukning">
         </div>
-        <div class="other-con">
-            <input type="button" value="Slet sogn">
+        <div class="commune-con">
+
         </div>
     </div>
 </div>
+<div class="create-con" hidden>
+    <label>Navn</label><br>
+    <input class="new-name-inp" type="text"><br><br>
+    <label>Kode</label><br>
+    <input class="new-code-inp" type="text"><br><br>
+    <label>Smittetryk</label><br>
+    <input class="new-inf-inp" type="text"><br><br>
+    <input class="create-btn" type="button" value="Opret">
+    <input class="cancel-btn" type="button" value="Annuller"><br><br>
+    <p class="create-error"></p>
+</div>
 
+<script src="/js/parish_data.js"></script>
+<script src="/js/parish_build.js"></script>
+<script src="/js/parish_create.js"></script>
+<script src="/js/parish_form.js"></script>
+<script src="/js/parish_controller.js"></script>
 </body>
 </html>
