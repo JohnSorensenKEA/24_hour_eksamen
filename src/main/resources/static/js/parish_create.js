@@ -4,6 +4,8 @@ const newNameInp = document.querySelector(".new-name-inp");
 const newCodeInp = document.querySelector(".new-code-inp");
 const newInfInp = document.querySelector(".new-inf-inp");
 
+const newInps = document.querySelectorAll(".new-inp");
+
 const createError = document.querySelector(".create-error");
 
 //-----------------------------------------------------------------------------------
@@ -17,6 +19,7 @@ function showBox(){
 
 function hideBox(){
     createCon.hidden = true;
+    newInps.forEach(i => i.value = "");
 }
 
 function create(){

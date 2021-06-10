@@ -15,6 +15,7 @@ function reset(){
     clear();
     build();
     resetForm();
+    hideBox();
 }
 
 function classSearch(element, term){

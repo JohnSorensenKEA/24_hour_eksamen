@@ -36,7 +36,11 @@ function setParishes(parishData){
         con.appendChild(navn);
 
         const commune = document.createElement("p");
-        commune.innerHTML = parishData[i].commune.name;
+        if (parishData[i].commune === null){
+            commune.innerHTML = "Kommune ikke sat";
+        } else {
+            commune.innerHTML = parishData[i].commune.name;
+        }
         con.appendChild(commune);
 
         const inf = document.createElement("p");

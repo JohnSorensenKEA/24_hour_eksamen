@@ -46,25 +46,29 @@ function setForm(id){
 }
 
 function updateSelected(){
-    const parish = parishes(selectedCon);
+    const parish = parishes[selectedCon];
     parish.name = nameInp.value;
     parish.code = codeInp.value;
     parish.infectionPressure = infInp.value;
-    updateParish(parish);
+    updateParish(parish)
+        .then(status => {reset()});
 }
 
 function deleteSelected(){
-    const parish = parishes(selectedCon);
-    deleteParish(parish);
+    const parish = parishes[selectedCon];
+    deleteParish(parish)
+        .then(status => {reset()});
 }
 
 function removeShutDownSelected(){
-    const parish = parishes(selectedCon);
-    endShutDown(parish);
+    const parish = parishes[selectedCon];
+    endShutDown(parish)
+        .then(status => {reset()});
 }
 
 function addShutDownSelected(){
-    const parish = parishes(selectedCon);
+    const parish = parishes[selectedCon];
     parish.shutDownEndDate = dateInp.value;
-    newShutDown(parish);
+    newShutDown(parish)
+        .then(status => {reset()});
 }
