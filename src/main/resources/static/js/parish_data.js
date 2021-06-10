@@ -43,6 +43,7 @@ const getAllCommunesUrl = "/api/allCommunes";
 
 //-----------------------------------------------------------------------------------
 let parishes = [];
+let communes = [];
 
 //-----------------------------------------------------------------------------------
 
@@ -100,5 +101,5 @@ function deleteParish(parish){
 function getCommunes(){
     return fetch(getAllCommunesUrl, getRequestOptions)
         .then(response => response.json())
-        .then(data => {return data});
+        .then(data => {communes = data; return data});
 }

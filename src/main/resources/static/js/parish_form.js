@@ -17,12 +17,12 @@ const comSel = document.querySelector(".com-sel");
 function setComSel() {
     getCommunes()
         .then(data => {
-            data.forEach(com => {
+            for (let i = 0; i < data.length; i++){
                 const opt = document.createElement("option");
-                opt.value = com.id;
-                opt.innerHTML = com.name;
+                opt.value = i;
+                opt.innerHTML = data[i].name;
                 comSel.appendChild(opt);
-            })
+            }
         })
 }
 
@@ -98,9 +98,15 @@ function addShutDownSelected(){
 }
 
 function saveCom(){
-
+    const parish = parishes[selectedCon];
+    parish.commune = communes[comSel.value];
+    updateParish(parish)
+        .then(status => {reset()});
 }
 
 function remCom(){
-
+    const parish = parishes[selectedCon];
+    parish.commune = null;
+    updateParish(parish)
+        .then(status => {reset()});
 }
