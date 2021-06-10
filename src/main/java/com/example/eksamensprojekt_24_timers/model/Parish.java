@@ -1,5 +1,7 @@
 package com.example.eksamensprojekt_24_timers.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 
@@ -31,6 +33,54 @@ public class Parish { //Sogn
         this.name = name;
         this.commune = commune;
         this.infectionPressure = infectionPressure;
+        this.shutDownStartDate = shutDownStartDate;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public int getCode() {
+        return code;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Commune getCommune() {
+        return commune;
+    }
+
+    public void setCommune(Commune commune) {
+        this.commune = commune;
+    }
+
+    public float getInfectionPressure() {
+        return infectionPressure;
+    }
+
+    public void setInfectionPressure(float infectionPressure) {
+        this.infectionPressure = infectionPressure;
+    }
+
+    public LocalDate getShutDownStartDate() {
+        return shutDownStartDate;
+    }
+
+    public void setShutDownStartDate(LocalDate shutDownStartDate) {
         this.shutDownStartDate = shutDownStartDate;
     }
 }
